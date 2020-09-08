@@ -1,4 +1,4 @@
-const baseUrl = 'https://5f56b6f132f56200168bd86d.mockapi.io/api/v1/tasks';
+const baseUrl = "https://5f56b6f132f56200168bd86d.mockapi.io/api/v1/tasks";
 
 const headers = {
   "Content-Type": "application/json;charset=utf-8",
@@ -27,7 +27,7 @@ export const deleteTask = (taskId) => {
 }
 
 export const getTasksList = () => {
-  fetch(baseUrl)
+  return fetch(baseUrl)
     .then((response) => {
       if (response.ok) {
         return response.json()
@@ -35,3 +35,5 @@ export const getTasksList = () => {
       return new Error('failed to load tasks list');
     })
 }
+
+
