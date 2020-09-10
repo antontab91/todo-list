@@ -25,12 +25,22 @@ class TodoList extends React.Component {
       });
   }
 
+  handleDeleteTask = (taskId) => {
+    return deleteTask(taskId)
+      .then(() => {
+        this.loadTasksList();
+      })
+  }
+
   render() {
 
     return (
       <main className="todo-list" >
         <CreateTaskInput />
-        <TasksList />
+        <TasksList
+          onDelete={this.handleDeleteTask}
+          tasksList={this.state.tasks}
+        />
       </main>
     )
   }
