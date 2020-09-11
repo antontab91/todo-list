@@ -32,13 +32,41 @@ class TodoList extends React.Component {
       })
   }
 
+  handleCreateTask = (text) => {
+    const taskData = {
+      text,
+      done: false,
+    };
+    createTask(taskData)
+      .then(() => {
+        this.loadTasksList();
+      })
+  }
+
+  handleUpdateTask = (taskId) => {
+    const { text, done } = this.state.tasks.find((task) => {
+      return task.id === taskId;
+    })
+
+    const taskData = {
+      ...text,
+      done: !done,
+    }
+
+    updateTask(taskId, taskData)
+      .then(() => {
+        this.loadTasksList()
+      })
+  }
+
   render() {
 
     return (
       <main className="todo-list" >
-        <CreateTaskInput />
+        <CreateTaskInput onCreate={this.handleCreateTask} />
         <TasksList
           onDelete={this.handleDeleteTask}
+          onUpdate={this.handleUpdateTask}
           tasksList={this.state.tasks}
         />
       </main>
