@@ -64,14 +64,17 @@ class TodoList extends React.Component {
   render() {
 
     return (
-      <main className="todo-list" >
-        <CreateTaskInput onCreate={this.handleCreateTask} />
-        <TasksList
-          onDelete={this.handleDeleteTask}
-          onUpdate={this.handleUpdateTask}
-          tasksList={this.state.tasks}
-        />
-      </main>
+      <>
+        <h1 className="title">Todo List</h1>
+        <main className="todo-list" >
+          <CreateTaskInput onCreate={this.handleCreateTask} />
+          <TasksList
+            onDelete={this.handleDeleteTask}
+            onUpdate={this.handleUpdateTask}
+            tasksList={this.state.tasks}
+          />
+        </main>
+      </>
     )
   }
 }
