@@ -25,14 +25,14 @@ class TodoList extends React.Component {
       });
   }
 
-  handleDeleteTask = (taskId) => {
+  handleTaskDelete = (taskId) => {
     return deleteTask(taskId)
       .then(() => {
         this.loadTasksList();
       })
   }
 
-  handleCreateTask = (text) => {
+  handleTaskCreate = (text) => {
     const taskData = {
       text,
       done: false,
@@ -45,13 +45,15 @@ class TodoList extends React.Component {
       })
   }
 
-  handleUpdateTask = (taskId) => {
-    const { text, done } = this.state.tasks.find((task) => {
+  handleTaskStatusChange = (taskId) => {
+    const { tasks } = this.state;
+    const { text, done, createdAt } = tasks.find((task) => {
       return task.id === taskId;
     })
 
     const taskData = {
       text,
+      createdAt,
       done: !done,
     }
 
@@ -67,11 +69,11 @@ class TodoList extends React.Component {
       <>
         <h1 className="title">Todo List</h1>
         <main className="todo-list" >
-          <CreateTaskInput onCreate={this.handleCreateTask} />
+          <CreateTaskInput onCreate={this.handleTaskCreate} />
           <TasksList
-            onDelete={this.handleDeleteTask}
-            onUpdate={this.handleUpdateTask}
             tasksList={this.state.tasks}
+            onDelete={this.handleTaskDelete}
+            onUpdate={this.handleTaskStatusChange}
           />
         </main>
       </>
