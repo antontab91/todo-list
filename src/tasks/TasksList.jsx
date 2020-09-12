@@ -14,16 +14,18 @@ const TasksList = ({ tasksList, onDelete, onUpdate }) => {
 
 
   return (
-    <ul className="list">
-      {sortTasksList.map((task) => {
-        return <Task
-          key={task.id}
-          onDelete={onDelete}
-          onUpdate={onUpdate}
-          {...task}
-        />;
-      })}
-    </ul>
+    < ul className="list" >
+      {
+        sortTasksList.map((task) => {
+          return <Task
+            key={task.id}
+            onDelete={onDelete}
+            onUpdate={onUpdate}
+            {...task}
+          />;
+        })
+      }
+    </ul >
   )
 }
 
