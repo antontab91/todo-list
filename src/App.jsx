@@ -4,7 +4,6 @@ import TodoList from './tasks/TodoList';
 const App = () => {
   return (
     <>
-
       <TodoList />
     </>
   )
