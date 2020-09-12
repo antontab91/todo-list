@@ -39,7 +39,12 @@ class CreateTaskInput extends React.Component {
 
     return (
       <div className="create-task">
-        <input className="create-task__input" type="text" value={this.state.value} onChange={this.handleChangeInputValue} name="value" />
+        <input className="create-task__input"
+          type="text"
+          name="value"
+          onChange={this.handleChangeInputValue}
+          value={this.state.value}
+        />
         <button className="btn create-task__btn" onClick={() => {
           this.handleTaskCreate()
         }}>Create</button>
