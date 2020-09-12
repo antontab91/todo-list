@@ -36,6 +36,8 @@ class TodoList extends React.Component {
     const taskData = {
       text,
       done: false,
+      createdAt: new Date().toISOString(),
+
     };
     createTask(taskData)
       .then(() => {
@@ -49,7 +51,7 @@ class TodoList extends React.Component {
     })
 
     const taskData = {
-      ...text,
+      text,
       done: !done,
     }
 
