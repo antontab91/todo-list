@@ -1,7 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import CreateTaskInput from './CreateTaskInput';
 import TasksList from './TasksList';
-import { connect } from 'react-redux';
 import *as tasksActions from './tasks.actions';
 import { tasksListSelector } from './tasks.selectors';
 

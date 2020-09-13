@@ -1,4 +1,3 @@
-import { from } from 'core-js/fn/array';
 import *as tasksGateway from './tasks.gateway';
 import { tasksListSelector } from './tasks.selectors';
 
