@@ -4,7 +4,7 @@ const initialState = {
   tasksList: [],
 }
 
-const tasksReducer = (state, action) => {
+export const tasksReducer = (state = initialState, action) => {
   switch (action.type) {
     default: {
       return state;

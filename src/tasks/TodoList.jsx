@@ -2,6 +2,8 @@ import React from 'react';
 import CreateTaskInput from './CreateTaskInput';
 import TasksList from './TasksList';
 import { fetchTasksList, createTask, deleteTask, updateTask } from './tasks.gateway'
+import { connect } from 'react-redux';
+import *as tasksActions from './tasks.actions';
 
 class TodoList extends React.Component {
   constructor(props) {
@@ -81,4 +83,17 @@ class TodoList extends React.Component {
   }
 }
 
-export default TodoList;
+const mapState = (state) => {
+  return {
+    state: state,
+  }
+}
+
+const mapDispatch = {
+  getTasksList: tasksActions.getTasksList,
+}
+
+const connector = connect(mapState, mapDispatch);
+const connectedTodoList = connector(TodoList);
+
+export default connectedTodoList;
