@@ -1,14 +1,5 @@
 import React from 'react';
 
-// const CreateTaskInput = ({ onCreate }) => {
-//   return (
-//     <div className="create-task">
-//       <input className="create-task__input" type="text" value="" />
-//       <button className="btn create-task__btn">Create</button>
-//     </div>
-//   )
-// }
-
 class CreateTaskInput extends React.Component {
   constructor(props) {
     super(props);
