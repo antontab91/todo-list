@@ -4,13 +4,14 @@ import TasksList from './TasksList';
 import { fetchTasksList, createTask, deleteTask, updateTask } from './tasks.gateway'
 import { connect } from 'react-redux';
 import *as tasksActions from './tasks.actions';
+import { tasksListSelector } from './tasks.selectors';
 
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      tasks: [],
+      tasks: this.props.state,
     }
   }
 
@@ -66,7 +67,7 @@ class TodoList extends React.Component {
   }
 
   render() {
-
+    console.log(this.props.state)
     return (
       <>
         <h1 className="title">Todo List</h1>
@@ -85,7 +86,7 @@ class TodoList extends React.Component {
 
 const mapState = (state) => {
   return {
-    state: state,
+    state: tasksListSelector(state),
   }
 }
 
