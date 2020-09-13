@@ -50,14 +50,13 @@ class TodoList extends React.Component {
 
   handleTaskStatusChange = (taskId) => {
     const { tasks } = this.state;
-    const { text, done, createdAt } = tasks.find((task) => {
+    const task = tasks.find((task) => {
       return task.id === taskId;
     })
 
     const taskData = {
-      text,
-      createdAt,
-      done: !done,
+      ...task,
+      done: !task.done,
     }
 
     updateTask(taskId, taskData)
@@ -67,7 +66,6 @@ class TodoList extends React.Component {
   }
 
   render() {
-    console.log(this.props.state)
     return (
       <>
         <h1 className="title">Todo List</h1>
