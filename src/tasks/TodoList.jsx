@@ -56,7 +56,7 @@ const TodoList = ({ state, createTask, updateTask, deleteTask, getTasksList }) =
 
 TodoList.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape()),
-  getTaskList: PropTypes.func.isRequired,
+  getTasksList: PropTypes.func.isRequired,
   updateTask: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired,
   createTask: PropTypes.func.isRequired,
