@@ -20,7 +20,7 @@ class CreateTaskInput extends React.Component {
     if (this.state.value !== "") {
       this.props.onCreate(this.state.value);
       this.setState({
-        value: '',
+        value: "",
       })
     }
     return null;
