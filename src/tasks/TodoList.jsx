@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import CreateTaskInput from './CreateTaskInput';
 import TasksList from './TasksList';
@@ -52,6 +53,14 @@ const TodoList = ({ state, createTask, updateTask, deleteTask, getTasksList }) =
     </>
   )
 }
+
+TodoList.propTypes = {
+  tasks: PropTypes.arrayOf(PropTypes.shape()),
+  getTaskList: PropTypes.func.isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
+  createTask: PropTypes.func.isRequired,
+};
 
 const mapState = (state) => {
   return {
