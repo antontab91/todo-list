@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import CreateTaskInput from './CreateTaskInput';
 import TasksList from './TasksList';
 import *as tasksActions from './tasks.actions';
-import { tasksListSelector } from './tasks.selectors';
+import { sortedTasksListSelector } from './tasks.selectors';
 
 // class TodoList extends React.Component {
 //   constructor(props) {
@@ -55,7 +55,7 @@ const TodoList = ({ state, createTask, updateTask, deleteTask, getTasksList }) =
 
 const mapState = (state) => {
   return {
-    state: tasksListSelector(state),
+    state: sortedTasksListSelector(state),
   }
 }
 
