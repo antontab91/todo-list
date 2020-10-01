@@ -6,33 +6,6 @@ import TasksList from './TasksList';
 import *as tasksActions from './tasks.actions';
 import { sortedTasksListSelector } from './tasks.selectors';
 
-// class TodoList extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   componentDidMount() {
-//     this.props.getTasksList()
-//   }
-
-//   render() {
-//     return (
-//       <>
-//         <h1 className="title">Todo List</h1>
-//         <main className="todo-list" >
-//           <CreateTaskInput onCreate={this.props.createTask} />
-//           <TasksList
-//             tasksList={this.props.state}
-//             onDelete={this.props.deleteTask}
-//             onUpdate={this.props.updateTask}
-//           />
-//         </main>
-//       </>
-//     )
-//   }
-// }
-
-
 const TodoList = ({ state, createTask, updateTask, deleteTask, getTasksList }) => {
 
   useEffect(() => {
